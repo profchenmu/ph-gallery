@@ -10,4 +10,7 @@ export class Todos {
   getName(){
     return this.model.user
   }
+  getTodoItems(){
+    return this.model.items.filter((item)=>item.done !== true)
+  }
 }
