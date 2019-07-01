@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Model } from './model';
+import { Model, TodoItem } from './model';
 
 @Component({
   templateUrl: './todos.component.html',
@@ -12,5 +12,15 @@ export class Todos {
   }
   getTodoItems(){
     return this.model.items.filter((item)=>item.done !== true)
+  }
+  addItem(value){
+    if(value!==''){
+      this.model.items.push(new TodoItem(value, false))
+    }
+  }
+  test(e){
+    console.log(e, this)
+  }
+  getInfo(){
   }
 }
